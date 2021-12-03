@@ -26,7 +26,10 @@ if (!flag)
         deleteElement.innerHTML = '';
         ymaps.ready(init);
             function init(){
-                let myMap = new ymaps.Map("map", {
+                if(myMap){
+                    myMap.destroy();
+                    myMap = null;
+                myMap = new ymaps.Map("map", {
                     center: [latitude, longitude],
                     zoom: 15,
                     controls: []
@@ -753,7 +756,7 @@ if (!flag)
     }
     
     
-
+}
 
 
 

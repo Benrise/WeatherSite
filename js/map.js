@@ -31,7 +31,7 @@ if (!flag)
                 ymaps.ready(init);
                 function init()
                     {
-                        let myMap = new ymaps.Map("map", {
+                        myMap = new ymaps.Map("map", {
                         center: [latitude, longitude],
                         zoom: 12,
                         controls: []
