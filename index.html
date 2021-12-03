@@ -26,8 +26,11 @@
     <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
-	
+
+
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
     
 
 </head>
@@ -48,7 +51,7 @@
                     <a href="cities.html" class = "cities">Погода городов мира</a>
                     <a href="sixteen.html" class="sixteen-forecast">Прогноз на 16 дней</a>
                     <a href="history.html" class="history">Исторический прогноз погоды</a>
-                    <a href="https://www.windy.com" class="map-forecast">Геокарта мира</a>
+                    <a href="weatherMap.html" class="map-forecast">Геокарта мира</a>
                 </div>
                 <form id="search-bar" onsubmit="return Weather(), changeLocation(), Update()" method="post">
                     <script src="./js/script.js"></script>
@@ -75,7 +78,9 @@
                     <p>Ветер: <span class="wind"></span> м/с</p>
                 </div>
             </section>
-            <div id="map"></div>
+            <div id="map">
+
+            </div>
         </main>
         <section id = "schedule">
 
