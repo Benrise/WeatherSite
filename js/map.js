@@ -1,14 +1,18 @@
 
 let latitude = 55.75
 let longitude = 37.64
-
+var flag = false;
  ymaps.ready(init);
         function init(){
-            let myMap = new ymaps.Map("map", {
-                center: [latitude, longitude],
-                zoom: 4,
-                controls: []
-            });
+            if (!flag){
+                flag = true;
+                myMap = new ymaps.Map("map", {
+                    center: [latitude, longitude],
+                    zoom: 4,
+                    controls: []
+                });
+
+            }
             
         }
         
