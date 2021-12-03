@@ -1,7 +1,7 @@
 
 
 
-
+var flag = false;
 window.onload = getMyLocation; //Вызываем функцию, которую создадим чуть ниже, она срабатывает сразу же после загрузки нашего сайта.
 
 function getMyLocation () { //собственно наша функция для определения местоположения
@@ -12,41 +12,81 @@ function getMyLocation () { //собственно наша функция дл�
 		alert("Упс, геолокация не поддерживается"); //выведем сообщение для старых браузеров.
 	}
 }
+if (!flag)
+{
+    function  displayLocation(position) {
+        flag = true;
+        //передаем в нашу функцию объект position - этот объект содержит ширину и долготу и еще массу всяких вещей.
+        latitude = position.coords.latitude; // излвекаем широту
+        longitude = position.coords.longitude; // извлекаем долготу
+        //Теперь пришло время все это записать в наш  DOM
+        let deleteElement = document.getElementById('map');
+        deleteElement.innerHTML = '';
+        ymaps.ready(init);
+            function init(){
+                let myMap = new ymaps.Map("map", {
+                    center: [latitude, longitude],
+                    zoom: 15,
+                    controls: []
+                });
+                let placemark = new ymaps.Placemark([latitude,longitude ], {});
+                myMap.geoObjects.add(placemark);
+    
+                //определение города
+                ymaps.geolocation.get({
+                    // Зададим способ определения геолокации
+                    // на основе ip пользователя.
+                    provider: 'yandex',
+                    // Включим автоматическое геокодирование результата.
+                    autoReverseGeocode: true
+                }).then(function (result) {
+                    // Выведем результат геокодирования.
+                    let city = result.geoObjects.get(0).properties.get('text').substr(8);
+                    document.getElementById('need').innerHTML = '';
+                    document.querySelector('.city').textContent = city;
+                });
+                
+            }
 
-function  displayLocation(position) {
-    //передаем в нашу функцию объект position - этот объект содержит ширину и долготу и еще массу всяких вещей.
-	latitude = position.coords.latitude; // излвекаем широту
-	longitude = position.coords.longitude; // извлекаем долготу
-	//Теперь пришло время все это записать в наш  DOM
-	let deleteElement = document.getElementById('map');
-    deleteElement.innerHTML = '';
-    ymaps.ready(init);
-        function init(){
-            let myMap = new ymaps.Map("map", {
-                center: [latitude, longitude],
-                zoom: 15,
-                controls: []
-            });
-            let placemark = new ymaps.Placemark([latitude,longitude ], {});
-            myMap.geoObjects.add(placemark);
 
-            //определение города
-            ymaps.geolocation.get({
-                // Зададим способ определения геолокации
-                // на основе ip пользователя.
-                provider: 'yandex',
-                // Включим автоматическое геокодирование результата.
-                autoReverseGeocode: true
-            }).then(function (result) {
-                // Выведем результат геокодирования.
-                let city = result.geoObjects.get(0).properties.get('text').substr(8);
-                document.getElementById('need').innerHTML = '';
-                document.querySelector('.city').textContent = city;
-            });
+
+
+}
+// function  displayLocation(position) 
+// {
+//     flag = true;
+//     //передаем в нашу функцию объект position - этот объект содержит ширину и долготу и еще массу всяких вещей.
+// 	latitude = position.coords.latitude; // излвекаем широту
+// 	longitude = position.coords.longitude; // извлекаем долготу
+// 	//Теперь пришло время все это записать в наш  DOM
+// 	let deleteElement = document.getElementById('map');
+//     deleteElement.innerHTML = '';
+//     ymaps.ready(init);
+//         function init(){
+//             let myMap = new ymaps.Map("map", {
+//                 center: [latitude, longitude],
+//                 zoom: 15,
+//                 controls: []
+//             });
+//             let placemark = new ymaps.Placemark([latitude,longitude ], {});
+//             myMap.geoObjects.add(placemark);
+
+//             //определение города
+//             ymaps.geolocation.get({
+//                 // Зададим способ определения геолокации
+//                 // на основе ip пользователя.
+//                 provider: 'yandex',
+//                 // Включим автоматическое геокодирование результата.
+//                 autoReverseGeocode: true
+//             }).then(function (result) {
+//                 // Выведем результат геокодирования.
+//                 let city = result.geoObjects.get(0).properties.get('text').substr(8);
+//                 document.getElementById('need').innerHTML = '';
+//                 document.querySelector('.city').textContent = city;
+//             });
             
-        }
-
-
+//         }
+// }
     /*Определение параметров погоды */
 
 
