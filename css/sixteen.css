@@ -1,59 +1,7 @@
-body
-{
-    font-family: "Roboto", "Open Sans", sans-serif;
-}
-a
-{
-    color: black;
-}
-a:visited
-{
-    color: black;
-}
-a:active
-{
-    color: black;
-}
-.menu a:hover
-{
-    color:red;
-}
 .site-header
 {
-    height: 184px;
+    margin-bottom: 20px;
 }
-.head-container
-{
-    height: 79.97px;
-}
-.logo
-{
-    width: 80px;
-    height: 80px;
-}
-.logo-title
-{
-    width: 707px;
-    height: 80px;
-}
-.site-title
-{
-    font-weight: bold;
-}
-.menu
-{
-    width: 609px;
-}
-.head-info
-{
-    margin-top: 50px;
-    width: 1200px;
-    padding-left: 105px;
-    padding-right: 105px;
-    font-size: 150%;
-    text-align: center;
-}
-
 .card
 {
     margin-top: 20px;
