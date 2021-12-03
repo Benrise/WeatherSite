@@ -20,6 +20,13 @@ function  displayLocation(position) {
 	//Теперь пришло время все это записать в наш  DOM
 	let deleteElement = document.getElementById('map');
     deleteElement.innerHTML = '';
+    yandexMapInitializer.prototype.destroy = function() {
+        const self = this;
+
+        this.ymaps.ready(function() {
+            self.myMap.destroy();
+        });
+    }
     ymaps.ready(init);
         function init(){
             let myMap = new ymaps.Map("map", {
