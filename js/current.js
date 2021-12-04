@@ -183,8 +183,7 @@ if (!flag)
                         }
                         if (data.hourly[i].weather[0].icon == '01n')
                         {
-                            document.getElementById(`elem-feature
-                            ${i}`).innerHTML = `<img src = "./img/moon_test.png">`;
+                            document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "./img/moon_test.png">`;
                         }
                         if (vis == 10000)
                         {
