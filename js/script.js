@@ -2,8 +2,6 @@
 
 function Weather()
 {
-   
-    
     let data = document.getElementById('search').value
    
     let failText = ""

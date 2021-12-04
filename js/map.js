@@ -31,6 +31,10 @@ if (!flag)
                 ymaps.ready(init);
                 function init()
                     {
+                        if(myMap){
+                            myMap.destroy();
+                            myMap = null;
+                        }
                         myMap = new ymaps.Map("map", {
                         center: [latitude, longitude],
                         zoom: 12,

@@ -14,7 +14,7 @@ function WeatherSixTeen()
             for (let i = 1; i <= 15;i++)
             {
                 document.getElementById(`card-dd-mm${(i)}`).textContent = moment.unix(data.data[(i)].ts).format("D MMMM");
-                document.getElementById(`upper-temp${(i)}`).textContent = data.data[i].temp + '°C';
+                document.getElementById(`upper-temp${(i)}`).textContent = Math.round(data.data[i].temp + '°C');
                 document.getElementById(`upper-weather-info${(i)}`).textContent = data.data[i].weather.description;
                 document.getElementById(`upper-img${(i)}`).innerHTML = `<img src="./img/weatherImg/${data.data[i].weather.icon}.png">`;
                 console.log(`<img src = "./img/weatherImg/${data.data[i].weather.icon}.png">`);
