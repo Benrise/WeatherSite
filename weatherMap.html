@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Погода</title>
     <link rel = "stylesheet" type = "text/css" href = "./css/style.css">
     <link rel = "stylesheet" type = "text/css" href = "./css/normalize.css">
     <title>Погода</title>
@@ -13,6 +12,11 @@
 	<link href="./fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src= "./js/moment-with-locales.js"></script>
     <script src="./js/moment-timezone-with-data.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+
+
+
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
@@ -54,6 +58,7 @@
         <iframe width="650" height="450" src="https://embed.windy.com/embed2.html?lat=55.012&lon=45.912&detailLat=55.801&detailLon=49.477&width=650&height=450&zoom=8&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0">
 
         </iframe>
+        
     </div>
     
     <script src="./js/WeatherMap.js"></script>
