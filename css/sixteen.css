@@ -155,3 +155,13 @@ body
     border:none;
     box-shadow: 0px 14px 28px rgba(0,0,0,0.25), 0px 10px 10px rgba(0,0,0,0.22);
 }
+.head-city
+{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 200%;
+}
+.head-title
+{
+    text-align: center;
+}

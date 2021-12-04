@@ -314,8 +314,8 @@ a
 }
 #submit:active
 {
-    background: red;
-    box-shadow: 0 3px red inset;
+    background: white;
+    box-shadow: 0 3px white inset;
 }
 .city
 {
