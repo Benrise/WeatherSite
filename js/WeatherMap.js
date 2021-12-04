@@ -11,23 +11,30 @@ options = {
 windyInit(options, windyAPI => {
     const { map } = windyAPI;
 });
-// function getMyLocation () { //собственно наша функция для определения местоположения
-// 	if (navigator.geolocation) { //для начала надо проверить, доступна ли геолокация, а то еще у некоторых браузеры то древние. Там о таком и не слышали.
-// 		navigator.geolocation.getCurrentPosition(displayLocation); //если все ок, то вызываем метод getCurrentPosition и передаем ей нашу функцию displayLocation, реализую ее ниже.
-// 	}
-// 	else {
-// 		alert("Упс, геолокация не поддерживается"); //выведем сообщение для старых браузеров.
-// 	}
-// }
-// window.onload = getMyLocation; //Вызываем функцию, которую создадим чуть ниже, она срабатывает сразу же после загрузки нашего сайта.
-navigator.geolocation.getCurrentPosition
-(
-    function  displayLocation(position) 
+window.onload = getMyLocation; //Вызываем функцию, которую создадим чуть ниже, она срабатывает сразу же после загрузки нашего сайта.
+
+function getMyLocation () { //собственно наша функция для определения местоположения
+	if (navigator.geolocation) { //для начала надо проверить, доступна ли геолокация, а то еще у некоторых браузеры то древние. Там о таком и не слышали.
+		navigator.geolocation.getCurrentPosition(displayLocation); //если все ок, то вызываем метод getCurrentPosition и передаем ей нашу функцию displayLocation, реализую ее ниже.
+	}
+	else {
+		alert("Упс, геолокация не поддерживается"); //выведем сообщение для старых браузеров.
+	}
+}
+
+function  displayLocation(position) 
     {
         //передаем в нашу функцию объект position - этот объект содержит ширину и долготу и еще массу всяких вещей.
         lat = position.coords.latitude; // излвекаем широту
         lon = position.coords.longitude; // извлекаем долготу
-
+        options = {
+            key: 'TBH7yYIILCw1h4FBTp3f1kidVSlKvzLf', 
+            verbose: false,
+        
+            lat: 55.75,
+            lon: 37.64,
+            zoom: 3,
+        };
 
         W.map.panTo([lat,lon]);
         W.map.zoomIn(7);
@@ -89,23 +96,26 @@ navigator.geolocation.getCurrentPosition
                     }
                     document.querySelector('.day-of-week').textContent = dayOfWeek;
                     document.querySelector('.month').textContent = monthYear;
+
+
+
+
+
+
+
+
+
                 })
+
+
+
     }
-
-
-
-
-
-
-
-
-)
-
 function updateLocation()
 {
     window.onload = getMyLocation;
     getMyLocation();
     displayLocation(position);
+    return false;
 }
 
 
