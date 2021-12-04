@@ -5,7 +5,7 @@ function WeatherSixTeenCommon()
     let data = "Moscow";
     let apiKey = 'fa548375619f4820bd9c540a4cc04eae';
     moment.locale('ru')
-    document.querySelector('.head-city').textContent = 'Москва' + ', '+moment().format("D MMMM ");
+    document.querySelector('.head-city').textContent = 'Москва';
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${data}&key=${apiKey}&lang=ru`
     moment.locale('ru');
     fetch(url)
@@ -50,7 +50,7 @@ function WeatherSixTeen()
         .then(function(resp){return resp.json() })
         .then(function(data)
         {
-            document.querySelector('.head-city').textContent = city + ', '+moment.unix(data.data[0].ts).format("D MMMM ");
+            document.querySelector('.head-city').textContent = city;
             console.log(data); 
             for (let i = 1; i <= 15;i++)
             {
