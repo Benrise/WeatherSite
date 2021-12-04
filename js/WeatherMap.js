@@ -30,11 +30,11 @@ function getMyLocation () { //собственно наша функция дл�
 function  displayLocation(position) 
     {
         //передаем в нашу функцию объект position - этот объект содержит ширину и долготу и еще массу всяких вещей.
-        latitude = position.coords.latitude; // излвекаем широту
-        longitude = position.coords.longitude; // извлекаем долготу
+        lat = position.coords.latitude; // излвекаем широту
+        lon = position.coords.longitude; // извлекаем долготу
 
 
-        W.map.panTo([latitude,longitude]);
+        W.map.panTo([lat,lon]);
         W.map.zoomIn(7);
         // windyInit(options, windyAPI => {
         //     const { map } = windyAPI;
@@ -44,7 +44,7 @@ function  displayLocation(position)
         //     //     .openOn(map);
         // });
         let apiKey = "49c8e7a1210aefbd0380c4684ee65305"
-                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=alerts&appid=${apiKey}&lang=ru`)
+                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts&appid=${apiKey}&lang=ru`)
                 .then(function(resp){return resp.json() })
                 .then(function(data){
                     console.log(data);
