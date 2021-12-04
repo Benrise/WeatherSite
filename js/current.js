@@ -164,39 +164,28 @@ if (!flag)
                     document.querySelector('.evening-feel').textContent = Math.round(data.daily[0].feels_like.eve-273) + ' °C';
                     
                     //schedule info elements info
-                    //time
                     let date;
+                    let temp;
+                    let vis;
                     for (let i = 0; i < 25; i++)
                     {
                         date = moment.unix(data.hourly[i].dt).format("HH:mm");
                         document.getElementById(`elem-time${i}`).textContent = date;
-                    }
-                    //temp
-                    for (let i = 0; i < 25; i++)
-                    {
-                        let temp = data.hourly[i].temp
+                        temp = data.hourly[i].temp
                         document.getElementById(`elem-temp${i}`).textContent = Math.round(temp-273) + ' °C';
-                    }
-                    //icon
-                    for (let i = 0; i < 25; i++)
-                    {
                         document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "https://openweathermap.org/img/wn/${data.hourly[i].weather[0]['icon']}@2x.png">`;
-                    }
-                    //description
-                    for (let i = 0; i < 25; i++)
-                    {
                         document.getElementById(`elem-desc${i}`).textContent = data.hourly[i].weather[0].description;
-                    }
-                    //pop
-                    for (let i = 0; i < 25; i++)
-                    {
                         document.getElementById(`elem-pop${i}`).textContent = "Вероятность осадков " + Math.round(data.hourly[i].pop)*10 + '%';
-                    }
-                    //vis
-                    
-                    for (let i = 0; i < 25; i++)
-                    {
-                        let vis = data.hourly[i].visibility;
+                        vis = data.hourly[i].visibility;
+                        if (data.hourly[i].weather[0].icon == '13n' || data.hourly[i].weather[0].icon == '13d')
+                        {
+                            document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "./img/snowflake.png">`;
+                        }
+                        if (data.hourly[i].weather[0].icon == '01n')
+                        {
+                            document.getElementById(`elem-feature
+                            ${i}`).innerHTML = `<img src = "./img/moon_test.png">`;
+                        }
                         if (vis == 10000)
                         {
                             document.getElementById(`elem-vis${i}`).textContent = "Отличная видимость";

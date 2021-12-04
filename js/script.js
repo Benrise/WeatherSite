@@ -131,45 +131,25 @@ function Weather()
 
 
             //schedule info elements info
-            //time
+            let date;
+            let temp;
+            let vis;
             for (let i = 0; i < 25; i++)
             {
-                let date = moment.unix(data.hourly[i].dt).format("HH:mm")
-                
+                date = moment.unix(data.hourly[i].dt).format("HH:mm");
                 document.getElementById(`elem-time${i}`).textContent = date;
-            }
-            //temp
-            for (let i = 0; i < 25; i++)
-            {
-                let temp = data.hourly[i].temp
+                temp = data.hourly[i].temp
                 document.getElementById(`elem-temp${i}`).textContent = Math.round(temp-273) + ' °C';
-            }
-            //icon
-            for (let i = 0; i < 25; i++)
-            {
                 document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "https://openweathermap.org/img/wn/${data.hourly[i].weather[0]['icon']}@2x.png">`;
-            }
-            //description
-            for (let i = 0; i < 25; i++)
-            {
                 document.getElementById(`elem-desc${i}`).textContent = data.hourly[i].weather[0].description;
-            }
-            //pop
-            for (let i = 0; i < 25; i++)
-            {
                 document.getElementById(`elem-pop${i}`).textContent = "Вероятность осадков " + Math.round(data.hourly[i].pop)*10 + '%';
-            }
-            //vis
-        
-            for (let i = 0; i < 25; i++)
-            {
-                let vis = data.hourly[i].visibility;
+                vis = data.hourly[i].visibility;
                 if (vis == 10000)
-                {
-                    document.getElementById(`elem-vis${i}`).textContent = "Отличная видимость";
-                    continue;
-                }
-                document.getElementById(`elem-vis${i}`).textContent = "Видимость " + Math.round((data.hourly[i].visibility)/1000) + ' км';
+                    {
+                        document.getElementById(`elem-vis${i}`).textContent = "Отличная видимость";
+                        continue;
+                    }
+                    document.getElementById(`elem-vis${i}`).textContent = "Видимость " + Math.round((data.hourly[i].visibility)/1000) + ' км';
             }
             //seven days info left table
             for (i = 1; i < 8; i++)
