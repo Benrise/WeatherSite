@@ -1,4 +1,10 @@
-
+body
+{
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+.site-title a{
+    font-weight: bold;
+}
 .content-container
 {
     display: flex;
