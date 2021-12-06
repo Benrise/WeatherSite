@@ -279,3 +279,70 @@ body, .site-header
 {
     margin-top: 60px;
 }
+ @media (max-width: 300px)
+{
+    .body
+    {
+        width: 1200px
+    }
+    #windy
+    {
+        width: 300px;
+    }
+    .slider-bar
+    {
+        width: 720px;
+    }
+    .daily-container
+    {
+        width: 620px;
+    }
+    .head-container
+    {
+        width: 735px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .menu
+    {
+        margin-top: 10px;
+        display: flex;
+        width: 300px;
+    }
+}
+@media (max-width: 1600px)
+{
+    .body
+    {
+        width: 1200px
+    }
+    #windy
+    {
+        width: 500px;
+    }
+    .slider-bar
+    {
+        width: 920px;
+    }
+    .daily-container
+    {
+        width: 820px;
+    }
+    .head-container
+    {
+        width: 935px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .menu
+    {
+        margin-top: 10px;
+        display: flex;
+        width: 500px;
+        margin-left: 50px;
+    }
+    #search-bar
+    {
+        padding-right: 15px;
+    }
+}  

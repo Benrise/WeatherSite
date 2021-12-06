@@ -7,8 +7,6 @@ body
 {
     padding: 50px;
 }
-
-
 .head-container
 {
     width: 1200px;
@@ -319,7 +317,7 @@ a
 }
 .city
 {
-    font-size: 200%;
+    font-size: 150%;
 }
 .temp, .temp, .feels, .humidity, .wind, .desctription, .weather, .feature
 {
