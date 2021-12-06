@@ -9,7 +9,7 @@
     
     margin-top: 20px;
     width: 1000px;
-    height: 530px;
+    height: 700px;
     display: flex;
     flex-direction: column;
 }
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     width: 1000px;
-    height: 560px;
+    height: 550px;
 }
 .higher-part
 {
@@ -47,14 +47,15 @@
     display: flex;
     flex-direction: column;
     width: 800px;
-    height: 75px;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 120px;
 }
 .forms
 {
     display: flex;
     flex-direction: row;
     height: 30px;
+    justify-content: space-between;
 }
 .search-button
 {
@@ -77,37 +78,38 @@
 {
     display: flex;
     flex-direction: row;
-    height: 360px;
+    height: 450px;
     width: 1000px;
     justify-content: space-between;
     align-items: center;
 }
 .left-container
 {
-    height: 340px;
+    height: 400px;
     width: 300px;
     background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%);
+    /* box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%); */
 }
 .right-container
 {
-    height: 340px;
+    height: 400px;
     width: 670px;
     background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%);
+    /* box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%); */
 }
 .feature-container
 {
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 140px;
+    height: 147px;
     align-items: center;
 }
 .feature-container img
 {
     width: 140px;
-    height: 140px;
+    height: 170px;
+    padding-top: 25px;
 }
 .date-desc
 {
@@ -122,7 +124,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 300px;
-    height: 200px;
+    height: 240px;
 }
 .date-desc, .temp-info, .feel-info, .wind-info, .hum-info, .city-info   
 {
@@ -133,6 +135,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    height: 400px;
 }
 .info-table
 {
@@ -190,3 +193,61 @@
 {
     border: none;
 }
+.under-container
+{
+    overflow: hidden;
+    transition-delay: 1s;
+}
+.left-container{
+    position: relative;
+    top: -1000px;
+    transition: top .5s linear;
+    box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%);
+  }
+.right-container
+{
+    position: relative;
+    top: -1000px;
+    transition: top .5s linear;
+    box-shadow: 0px 14px 28px rgb(0 0 0 / 25%), 0px 10px 10px rgb(0 0 0 / 22%);
+}
+
+.date-selector, .history-search
+{
+    width: 302px;
+    height: 27px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 15px;
+}
+.search-button
+{
+    border: none;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    border-radius: 3px;
+    background: #FFDE40;
+    box-shadow: 0 -3px #ff9640 inset;
+    transition: 0.2s;
+    height: 50px;
+    font-size: 120%;
+}
+.search-button:hover
+{
+    background: orange;
+}
+.search-button:active
+{
+    background: white;
+    box-shadow: 0 3px white inset;
+}
+.search-button-container
+{
+    height: 50px;
+    width: 800px;
+}
+
