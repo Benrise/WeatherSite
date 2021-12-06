@@ -1,18 +1,7 @@
 
-options = {
-    key: 'TBH7yYIILCw1h4FBTp3f1kidVSlKvzLf', 
-    verbose: false,
-
-    lat: 55.75,
-    lon: 37.64,
-    zoom: 3,
-};
-
-windyInit(options, windyAPI => {
-    const { map } = windyAPI;
-});
+var flag = false;
+var fill = false;
 window.onload = getMyLocation; //Вызываем функцию, которую создадим чуть ниже, она срабатывает сразу же после загрузки нашего сайта.
-
 function getMyLocation () { //собственно наша функция для определения местоположения
 	if (navigator.geolocation) { //для начала надо проверить, доступна ли геолокация, а то еще у некоторых браузеры то древние. Там о таком и не слышали.
 		navigator.geolocation.getCurrentPosition(displayLocation); //если все ок, то вызываем метод getCurrentPosition и передаем ей нашу функцию displayLocation, реализую ее ниже.
@@ -21,6 +10,17 @@ function getMyLocation () { //собственно наша функция дл�
 		alert("Упс, геолокация не поддерживается"); //выведем сообщение для старых браузеров.
 	}
 }
+options = {
+    key: 'TBH7yYIILCw1h4FBTp3f1kidVSlKvzLf', 
+    verbose: false,
+
+    lat: 55.75,
+    lon: 37.64,
+    zoom: 3,
+};
+windyInit(options, windyAPI => {
+    const { map } = windyAPI;
+});
 
 function  displayLocation(position) 
     {
@@ -35,16 +35,8 @@ function  displayLocation(position)
             lon: 37.64,
             zoom: 3,
         };
-
         W.map.panTo([lat,lon]);
         W.map.zoomIn(7);
-        // windyInit(options, windyAPI => {
-        //     const { map } = windyAPI;
-        
-        //     // L.popup()
-        //     //     .setLatLng([50.4, 14.3])//.setContent('')
-        //     //     .openOn(map);
-        // });
         let apiKey = "49c8e7a1210aefbd0380c4684ee65305"
                 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts&appid=${apiKey}&lang=ru`)
                 .then(function(resp){return resp.json() })
@@ -96,28 +88,15 @@ function  displayLocation(position)
                     }
                     document.querySelector('.day-of-week').textContent = dayOfWeek;
                     document.querySelector('.month').textContent = monthYear;
-
-
-
-
-
-
-
-
-
                 })
-
-
-
     }
 function updateLocation()
 {
     window.onload = getMyLocation;
     getMyLocation();
-    displayLocation(position);
+    displayLocation();
     return false;
 }
-
 
 
 
