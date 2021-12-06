@@ -40,7 +40,7 @@ if (!flag)
                 ymaps.geolocation.get({
                     // Зададим способ определения геолокации
                     // на основе ip пользователя.
-                    provider: 'yandex',
+                    provider: 'auto',
                     // Включим автоматическое геокодирование результата.
                     autoReverseGeocode: true
                 }).then(function (result) {
