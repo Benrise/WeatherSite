@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -28,9 +29,6 @@
     <meta name="theme-color" content="#ffffff">
 
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-
     
 
 </head>
@@ -50,7 +48,7 @@
                 <div class="menu">
                     <a href="cities.html" class = "cities">Погода городов мира</a>
                     <a href="sixteen.html" class="sixteen-forecast">Прогноз на 16 дней</a>
-                    <a href="history.html" class="history">Исторический прогноз погоды</a>
+                    <a href="history.html" class="history">Прогноз прошлой недели</a>
                     <a href="weatherMap.html" class="map-forecast">Геокарта мира</a>
                 </div>
                 <form id="search-bar" onsubmit="return Weather(), changeLocation(), Update()" method="post">
