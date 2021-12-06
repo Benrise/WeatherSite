@@ -4,8 +4,8 @@ let flag = 0;
 if (flag == 0)
 {
     let today = new Date();
-    let maxDate = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    let minDate = moment().subtract(5, 'days').format('YYYY-MM-DD');
+    let maxDate = moment().subtract(0, 'days').format('YYYY-MM-DD');
+    let minDate = moment().subtract(4, 'days').format('YYYY-MM-DD');
     document.getElementById('dataToday').setAttribute("min", minDate);
     document.getElementById('dataToday').setAttribute("max", maxDate);
     document.getElementById('dataToday').setAttribute("value", maxDate);
@@ -72,7 +72,7 @@ function HistoryFunc()
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/moon_test.png">`;
                     }
-                    if (data.hourly[i].weather[0].icon == '13n' || data.current.weather[0].icon == '13d')
+                    if (data.hourly[i].weather[0].icon == '13n' || data.hourly[i].weather[0].icon == '13d')
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/snowflake.png">`;
                     }
@@ -91,7 +91,7 @@ function HistoryFunc()
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/moon_test.png">`;
                     }
-                    if (data.hourly[i].weather[0].icon == '13n' || data.current.weather[0].icon == '13d')
+                    if (data.hourly[i].weather[0].icon == '13n' || data.hourly[i].weather[0].icon == '13d')
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/snowflake.png">`;
                     }
@@ -109,7 +109,7 @@ function HistoryFunc()
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/moon_test.png">`;
                     }
-                    if (data.hourly[i].weather[0].icon == '13n' || data.current.weather[0].icon == '13d')
+                    if (data.hourly[i].weather[0].icon == '13n' || data.hourly[i].weather[0].icon == '13d')
                     {
                         document.getElementById(`table-feature${k}`).innerHTML = `<img src = "./img/snowflake.png">`;
                     }
@@ -118,5 +118,12 @@ function HistoryFunc()
             }
         })
     })
+    document.querySelector('.left-container').style.top = "0px";
+    document.querySelector('.right-container').style.top = "0px";
+    function Visible()
+    {
+        document.querySelector('.under-container').style.overflow = "visible";
+    }
+    setTimeout(Visible, 500);
     return false;
 }
