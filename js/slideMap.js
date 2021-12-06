@@ -1,7 +1,11 @@
 let position = 0;
-const slidesToShow = 11;
-const slidesToScroll = 11;
-
+let slidesToShow = 11;
+let slidesToScroll = 11;
+if (window.matchMedia("(max-width: 300px)").matches)
+{
+    slidesToShow = 6;
+    slidesToScroll = 6;
+}
 
 const container = document.querySelector('.daily-container');
 const track = document.querySelector('.daily-track');

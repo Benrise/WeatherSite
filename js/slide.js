@@ -1,7 +1,6 @@
 let position = 0;
-const slidesToShow = 3;
-const slidesToScroll = 3;
-
+let slidesToShow = 3;
+let slidesToScroll = 3;
 
 const container = document.querySelector('.daily-container');
 const track = document.querySelector('.daily-track');

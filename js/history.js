@@ -10,11 +10,20 @@ if (flag == 0)
     document.getElementById('dataToday').setAttribute("max", maxDate);
     document.getElementById('dataToday').setAttribute("value", maxDate);
     flag = 1;
-
-
-
 }
 
+let current_rotation = 0;
+function Rotate()
+{
+    let city = document.querySelector('.history-search').value
+    if (city == '' || city == ' ')
+    {
+        return false;
+    }
+    current_rotation -= 360;
+    document.querySelector(".higher-part img").style.transform = 'rotate(' + current_rotation + 'deg)';
+    return false;
+}
 function HistoryFunc()
 {
     let city = document.querySelector('.history-search').value
@@ -125,5 +134,10 @@ function HistoryFunc()
         document.querySelector('.under-container').style.overflow = "visible";
     }
     setTimeout(Visible, 500);
+
+
+
+
+
     return false;
 }
