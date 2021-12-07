@@ -207,6 +207,15 @@ if (!flag)
                         document.getElementById(`seven-days-hum${i}`).textContent = data.daily[i].humidity + ' %';
                         document.getElementById(`seven-days-pop${i}`).textContent = Math.round(data.daily[i].pop)*10 + ' %';
                         document.getElementById(`seven-days-vis${i}`).textContent = Math.round((data.hourly[i].visibility)/1000) + ' км';
+                        document.getElementById(`seven-days-img${i}`).innerHTML = `<img src = "https://openweathermap.org/img/wn/${data.hourly[i].weather[0]['icon']}@2x.png">`;
+                        if (data.hourly[i].weather[0].icon == '01n')
+                        {
+                            document.getElementById(`seven-days-img${i}`).innerHTML = `<img src = "./img/moon_test.png">`;
+                        }
+                        if (data.hourly[i].weather[0].icon == '13n' || data.hourly[i].weather[0].icon == '13d')
+                        {
+                            document.getElementById(`seven-days-img${i}`).innerHTML = `<img src = "./img/snowflake.png">`;
+                        }
                         //for night 
                         document.getElementById(`night-temp${i}`).textContent = Math.round(data.daily[i].temp.night-273) + ' °C';
                         document.getElementById(`night-feel${i}`).textContent = Math.round(data.daily[i].feels_like.night-273) + ' °C';
