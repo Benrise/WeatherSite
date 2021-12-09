@@ -149,7 +149,7 @@ a
 {
     body
     {
-        width: max-content;
+        width: 100%;
     }
     #main
     {
@@ -169,7 +169,7 @@ a
 {
     body
     {
-        width: 1200px;
+        width: 100%;
     }
     .logo
     {
