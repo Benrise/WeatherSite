@@ -1,4 +1,15 @@
 
+html
+{
+    scroll-behavior: smooth;
+}
+*
+{
+    scroll-behavior: smooth;
+}
+
+
+
 body
 {
     font-family: "Roboto", "Open Sans", sans-serif;
