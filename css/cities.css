@@ -1,3 +1,20 @@
+html
+{
+    scroll-behavior: smooth;
+}
+*
+{
+    scroll-behavior: smooth;
+}
+
+.button, .russia-city, .usa-city, .germany-city
+{
+    color: white;
+}
+#submit
+{
+    color: black !important;
+}
 body
 {
     font-family: "Roboto", "Open Sans", sans-serif;
@@ -132,10 +149,6 @@ h1
     font-size: 120%;
 }
 
-.button
-{
-    color: black;
-}
 a.button:hover
 {
     color:blue;
