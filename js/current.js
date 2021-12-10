@@ -37,18 +37,38 @@ if (!flag)
                 let placemark = new ymaps.Placemark([latitude,longitude ], {});
                 myMap.geoObjects.add(placemark);
                 //определение города
-                ymaps.geolocation.get({
-                    // Зададим способ определения геолокации
-                    // на основе ip пользователя.
-                    provider: 'yandex',
-                    // Включим автоматическое геокодирование результата.
-                    autoReverseGeocode: true
-                }).then(function (result) {
-                    // Выведем результат геокодирования.
-                    let city = result.geoObjects.get(0).properties.get('text').substr(8);
-                    document.getElementById('need').innerHTML = '';
-                    document.querySelector('.city').textContent = city;
-                });
+                if(window.matchMedia("only screen and (max-width: 760px)").matches) 
+                {
+                    ymaps.geolocation.get({
+                        // Зададим способ определения геолокации
+                        // на основе ip пользователя.
+                        provider: 'auto',
+                        // Включим автоматическое геокодирование результата.
+                        autoReverseGeocode: true
+                    }).then(function (result) {
+                        // Выведем результат геокодирования.
+                        let city = result.geoObjects.get(0).properties.get('text').substr(8, 6);
+                        document.getElementById('need').innerHTML = '';
+                        document.querySelector('.city').textContent = city;
+                    });
+                    
+                } 
+                else 
+                {
+                    ymaps.geolocation.get({
+                        // Зададим способ определения геолокации
+                        // на основе ip пользователя.
+                        provider: 'yandex',
+                        // Включим автоматическое геокодирование результата.
+                        autoReverseGeocode: true
+                    }).then(function (result) {
+                        // Выведем результат геокодирования.
+                        let city = result.geoObjects.get(0).properties.get('text').substr(8);
+                        document.getElementById('need').innerHTML = '';
+                        document.querySelector('.city').textContent = city;
+                    }); 
+                }
+
             }
 
             if (flag)
@@ -181,7 +201,7 @@ if (!flag)
                         {
                             document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "./img/snowflake.png">`;
                         }
-                        if (data.hourly[i].weather[0].icon == '01n')
+                        if (data.hourly[i].weather[0].icon == '01n' || data.hourly[i].weather[0].icon == 'c01n' )
                         {
                             document.getElementById(`elem-feature${i}`).innerHTML = `<img src = "./img/moon_test.png">`;
                         }
