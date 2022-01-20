@@ -117,6 +117,10 @@ body, .site-header
     width: 190px;
     height: 190px;
 }
+.city-temp
+{
+    width: 130px;
+}
 .feature-right img
 {
     width: 70%;
@@ -345,4 +349,25 @@ body, .site-header
     {
         padding-right: 15px;
     }
-}  
+}
+
+.loader {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 5px solid #cae0f1;
+    border-right: 5px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1.5s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
