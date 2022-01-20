@@ -44,6 +44,7 @@ function  displayLocation(position)
                     console.log(data);
                     let date;
                     let temp;
+                    document.querySelector('.feature-right').style.width = '190px';
                     for (let i = 0; i < 25; i++)
                     {
                         date = moment.unix(data.hourly[i].dt).format("HH:mm");
@@ -88,6 +89,7 @@ function  displayLocation(position)
                     }
                     document.querySelector('.day-of-week').textContent = dayOfWeek;
                     document.querySelector('.month').textContent = monthYear;
+                    
                 })
     }
 function updateLocation()
