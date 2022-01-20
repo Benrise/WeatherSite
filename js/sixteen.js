@@ -42,7 +42,7 @@ function WeatherSixTeen()
 {
     
     let city = document.getElementById('search').value
-    let apiKey = 'fa548375619f4820bd9c540a4cc04eae';
+    let apiKey = '35986f20c3c24ad082a04af7bf721f03';
     
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${apiKey}&lang=ru`
     moment.locale('ru');
