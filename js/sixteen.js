@@ -3,7 +3,7 @@ WeatherSixTeenCommon();
 function WeatherSixTeenCommon()
 {
     let data = "Moscow";
-    let apiKey = '35986f20c3c24ad082a04af7bf721f03';
+    let apiKey = 'a550ebb81a654a78b2c459f371115cdc';
     moment.locale('ru')
     document.querySelector('.head-city').textContent = 'Москва';
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${data}&key=${apiKey}&lang=ru`
@@ -42,7 +42,7 @@ function WeatherSixTeen()
 {
     
     let city = document.getElementById('search').value
-    let apiKey = '35986f20c3c24ad082a04af7bf721f03';
+    let apiKey = 'a550ebb81a654a78b2c459f371115cdc';
     
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${apiKey}&lang=ru`
     moment.locale('ru');
