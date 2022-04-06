@@ -260,7 +260,7 @@ if (!flag)
                         document.getElementById(`seven-days-uv${i}`).textContent = data.current.uvi;
             
                     }
-                    let apiKey2 = `f6c65b52c3f14ba2aab3343c297373e9`
+                    let apiKey2 = `a550ebb81a654a78b2c459f371115cdc`
                     let url = `https://api.weatherbit.io/v2.0/forecast/hourly?lat=${latitude}&lon=${longitude}&key=${apiKey2}&hours=193&lang=ru`
                     fetch(url)
                         .then(function(resp){return resp.json() })
